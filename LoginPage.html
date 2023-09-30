@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LogIn page</title>
+        <style>
+            body{
+                font-style: oblique;
+            }
+            .container{
+                width: 400px;
+                margin: 0 auto;
+                padding-top: 100px;
+            }
+            h2{
+                text-align: center;
+            }
+            input[type="text"],input[type="password"]{
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+            input[type="submit"]{
+                width: 100%;
+                padding: 10px;
+                background-color: aqua;
+                color: whitesmoke;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover{
+                background-color: aqua;
+            }
+            .error{
+                color: red;
+                font-size: 15px;
+                margin-top: 5px;
+            }
+        </style>
+    </head>
+    <body background="C:\Users\User\OneDrive\Desktop\Log.webp">
+    <div class="container">
+        <h2>Login</h2>
+        <form action="" method="post" id="login-form">
+            <input type="text" name="username" placeholder="music_lover" required>
+            <input type="password" name="password" placeholder="hi@123" required>
+            <input type="submit" value="Login">
+        </form>
+        <div id="error-message" class="error"></div>
+    </div>
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            var username = document.getElementsByName("username")[0].value;
+            var password = document.getElementsByName("password")[0].value;
+            
+            // Perform login validation
+            if (username === "charan" && password === "music@123") {
+              // Login successful, redirect to dashboard or perform desired action
+              alert("Login successful!");
+              // Replace alert with your desired action (e.g., redirecting to a new page)
+            } else {
+              // Login failed, display error message
+              var errorMessage = document.getElementById("error-message");
+              errorMessage.textContent = "Invalid username or password.";
+            }
+          });
+      
+    </script>
+    </body>
+</html>
